@@ -24,3 +24,16 @@
 .campo-errado {
     border-color: red;
 }
+
+.placar {
+    display: none;
+}
+
+body {
+    overflow: scroll;
+}
+
+#erro {
+    color: red;
+    display: none;
+}

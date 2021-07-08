@@ -1,5 +1,6 @@
-const tempoInicial =  $("#tempo-digitacao").text();
+let tempoInicial =  $("#tempo-digitacao").text();
 const campo = $(".campo-digitacao");
+const botaoRemover = $(".botao-remover");
 
 $(function() {
     atualizaTamanhoFrase();
@@ -8,6 +9,11 @@ $(function() {
     inicializaMarcadores();
     reiniciaJogo();
 })
+
+function atualizaTempoInicial(tempo) {
+    tempoInicial = tempo;
+    $('#tempo-digitacao').text(tempo);
+}
 
 function atualizaTamanhoFrase() {  
 
@@ -32,8 +38,8 @@ function inicializaContadores() {
 }
 
 function inicializaMarcadores() {
-    const frase = $('.frase').text();
     campo.on('input', function () {
+        const frase = $('.frase').text();
         const digitado = campo.val();
         const comparavel = frase.substr(0, digitado.length)
         
@@ -48,26 +54,13 @@ function inicializaMarcadores() {
     })
 }
 
-function inserePlacar () {
-    const corpoTabela = $(".placar").find("tbody");
-    const usuario = "Douglas";
-    const numPalavras = $("#contador-palavras").text();
 
-    const linha = "<tr>" + 
-                    "<td>" + usuario + "</td>" +
-                    "<td>" + numPalavras + "</td>" +
-                  "</tr>";
-
-    corpoTabela.append(linha);
-    //corpoTabela.prepend adiciona antes
-    
-}
 
 function inicializaCronometro () {  
-    var tempo = $("#tempo-digitacao").text();
     campo.one("focus", function() { 
+        var tempo = $("#tempo-digitacao").text();
         //todo setInterval retorna seu proprio ID.
-        const cronometro = setInterval(function() {
+        const cronometro = setInterval(function () {
             tempo--;
             $("#tempo-digitacao").text(tempo);
     
@@ -94,13 +87,17 @@ function reiniciaJogo () {
         campo.toggleClass("campo-desabilitado");
         campo.removeClass('campo-correto');
         campo.removeClass('campo-errado');
-    
+        
+        inicializaCronometro();
+
         $("#contador-palavras").text("0");
         $("#contador-caracteres").text("0");
         $("#tempo-digitacao").text(tempoInicial);
 
-        inicializaCronometro();
     })
-
 }
+
+
+
+
     

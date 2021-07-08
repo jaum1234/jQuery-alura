@@ -11,6 +11,13 @@
     <div class="container">
         <h1 class="center">Alura Typer</h1>
         <p class="frase center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore necessitatibus quo a, quos accusamus dolor aperiam tempore eos? Assumenda porro libero provident delectus est dicta optio vero harum. Officiis, sequi.</p>
+
+        <div class="center">
+            <p id="erro">
+                Ocorreu um erro, por favor, tente novamente
+            </p>
+        </div>
+
         <ul class="informacoes center">
             <li >
                 <i class="small material-icons icones">description</i>
@@ -23,8 +30,15 @@
         </ul>
         <textarea class="campo-digitacao" cols="30" rows="10"></textarea>
         <div class="botoes" >
-            <a class="btn-floating btn-large waves-effect waves-light red" id="botao-reiniciar"><i class="material-icons">autorenew
-            </i></a>
+            <a class="btn-floating btn-large waves-effect waves-light red" id="botao-reiniciar">
+                <i class="material-icons">autorenew</i>
+            </a>
+            <a class="btn-floating btn-large waves-effect waves-light green" id="botao-placar">
+                <i class="material-icons">assignment</i>
+            </a>
+            <a class="btn-floating btn-large waves-effect waves-light blue" id="troca-frase">
+                <i class="material-icons">shuffle</i>
+            </a>
         </div>
         <ul>
             <li class="center"><span id="contador-caracteres" >0</span> caracteres</li>
@@ -38,13 +52,11 @@
                     <tr>
                         <th>Nome</th>
                         <th>No. de palavras</th>
+                        <th>Remover</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Douglas</td>
-                        <td>10 palavras</td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </section>
@@ -52,5 +64,7 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/placar.js"></script>
+    <script src="js/frase.js"></script>
 </body>
 </html>
