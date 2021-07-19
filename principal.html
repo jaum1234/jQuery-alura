@@ -13,6 +13,7 @@
         <p class="frase center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore necessitatibus quo a, quos accusamus dolor aperiam tempore eos? Assumenda porro libero provident delectus est dicta optio vero harum. Officiis, sequi.</p>
 
         <div class="center">
+            <img src="img/spinner.gif" alt="Spinner" id="spinner">
             <p id="erro">
                 Ocorreu um erro, por favor, tente novamente
             </p>
@@ -29,7 +30,7 @@
             </li>
         </ul>
         <textarea class="campo-digitacao" cols="30" rows="10"></textarea>
-        <div class="botoes" >
+        <div class="botoes">
             <a class="btn-floating btn-large waves-effect waves-light red" id="botao-reiniciar">
                 <i class="material-icons">autorenew</i>
             </a>
@@ -38,6 +39,13 @@
             </a>
             <a class="btn-floating btn-large waves-effect waves-light blue" id="troca-frase">
                 <i class="material-icons">shuffle</i>
+            </a>
+            <a class="btn-floating btn-large waves-effect waves-light cyan" id="botao-frase-id">
+                <i class="material-icons">repeat_one</i>
+            </a>
+            <input type="number" id="frase-id" min="0">
+            <a class="btn-floating btn-large waves-effect waves-light yellow" id="botao-sync">
+                <i class="material-icons">swap_vert</i>
             </a>
         </div>
         <ul>
