@@ -82,11 +82,21 @@ function sincronizaPlacar() {
         placar: placar
     };
 
-    $.post("/placar", dados,
+    $.post("http://localhost:3000/placar", dados,
         function () {
             console.log("Salvou o placar no servidor");
         },
     );
-    
+}
+
+function atualizaPlacar() {  
+    $.get("http://localhost:3000/placar", function (data) {
+            $(data).each(function () {
+                const linha = novaLinha(this.usuario, this.pontos);
+                linha.find('.botao-remover').on("click", removeLinha);
+                $("tbody").append(linha);
+            })
+        }
+    );
 }
 
