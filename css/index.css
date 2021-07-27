@@ -22,3 +22,11 @@
 .slick-prev:before, .slick-next:before {
 	color: black;
 }
+
+.select-usuarios {
+	display: inline-block;
+}
+
+#usuarios {
+	display: inline-block;
+}
